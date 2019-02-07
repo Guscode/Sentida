@@ -36,10 +36,10 @@ Function <- function(string){
     if (word == "ikk"){
       rev <- 3
     }
-    if (word %in% intensifier$stem){
-        mul <- 2
-        multiplier <- intensifier$score[which(intensifier$stem == word)]
-      }
+    #if (word %in% intensifier$stem){
+        #mul <- 2
+        #multiplier <- intensifier$score[which(intensifier$stem == word)]
+      #}
     if (word %in% aarup$stem){
       wordsc <-  aarup$score[which(aarup$stem == word)]
       if (rev == 1 | rev == 2){
