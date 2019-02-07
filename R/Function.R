@@ -41,7 +41,10 @@ Function <- function(string){
       if (rev == 1 | rev == 2){
         wordsc <- wordsc*(-1)
       }
-      
+     if (word %in% intensifier$stem){
+      mul <- 2
+      multiplier <- intensifier$score[which(intensifier$stem == word)]
+    }
       if (mul == 1){
         wordsc <- wordsc*multiplier
       }
