@@ -21,7 +21,7 @@ sentida <- function(string){
   mul <- 0
   string <- as.character(string)
   string <- tolower(string)
-  space <- stringr::strsplit(string, "")[[1]]
+  space <- stringr::str_split(string, "")[[1]]
   string <- stringr::str_replace_all(string, "[[:punct:]]", "")
   if (" " %in% space){
     realstr <- stringr::strsplit(string, " ")[[1]]
