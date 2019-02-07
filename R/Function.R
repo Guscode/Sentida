@@ -1,6 +1,6 @@
 #' Sentiment scores a string
 #'
-#' @name Sentida
+#' @name Function
 #'
 #' @param string: a text string
 #'
@@ -13,7 +13,7 @@
 #' @export
 #'
 
-sentida <- function(string){
+Function <- function(string){
   intense <- 1
   score <- 0
   rev <- 0
