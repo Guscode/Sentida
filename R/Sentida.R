@@ -21,17 +21,17 @@ sentida <- function(string){
   mul <- 0
   string <- as.character(string)
   string <- tolower(string)
-  space <- strsplit(string, "")[[1]]
-  string <- str_replace_all(string, "[[:punct:]]", "")
+  space <- stringr::strsplit(string, "")[[1]]
+  string <- stringr::str_replace_all(string, "[[:punct:]]", "")
   if (" " %in% space){
-    realstr <- strsplit(string, " ")[[1]]
+    realstr <- stringr::strsplit(string, " ")[[1]]
   } else {
     realstr <- string
   }
   if ("!" %in% space){
     intense <- 1.29
   }
-  realstr <- wordStem(realstr, language = "danish")
+  realstr <- SnowballC::wordStem(realstr, language = "danish")
   for (word in realstr){
     if (word == "ikk"){
       rev <- 3
