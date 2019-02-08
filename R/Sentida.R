@@ -15,8 +15,6 @@
 
 
 sentida <- function(string){
-  aarup$stem <- as.character(aarup$stem)
-  intensifier$stem <- as.character(intensifier$stem)
   intense <- 1
   score <- 0
   rev <- 0
