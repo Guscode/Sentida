@@ -12,6 +12,8 @@
 #'
 #' @export
 #'
+aarup$stem <- as.character(aarup$stem)
+intensifier$stem <- as.character(intensifier$stem)
 
 sentida <- function(string){
   intense <- 1
