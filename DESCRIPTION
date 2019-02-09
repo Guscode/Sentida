@@ -1,13 +1,12 @@
 Package: Sentida
 Type: Package
-Title: Sentiment scoring of words and emoticons
+Title: Sentiment scoring of words and sentences.
 Version: 0.2
-Date: 2016-04-17
+Date: 2019-02-07
 Author: Aarup
-Maintainer: aarup <au593405@au.dk>
-Description: The packages does sentiment scoring of text strings by looking at words and emoticons.
-License: AFINN data: ODC, R code: GPL-2
+Maintainer: Aarup <au593405@au.dk>
+Description: The package allows user to make sentiment analysis in danish.
 LazyData: TRUE
 RoxygenNote: 5.0.1
-Citation: Data: https://raw.githubusercontent.com/fnielsen/afinn/444b216fffb09b38023520cc48384d6c5196cc5b/afinn/data/CITATION
+Citation: Data: Aarup, Svendsen, Aarup
 Imports: stringr, SnowballC
