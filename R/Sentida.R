@@ -5,7 +5,7 @@
 #' @param string: a text string
 #'
 #' @description
-#' Sentida sentiment-scores a string of text. It uses the AFINN sentiment scoring. It assigns a value to each recognized word or emoticon in the string and returns the sum.
+#' Sentida sentiment-scores a string of text.
 #'
 #' @return
 #' The function returns the sum of sentiment.
