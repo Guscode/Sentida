@@ -3,6 +3,7 @@
 #' @name Sentida
 #'
 #' @param string: a text string
+#'@param outout: "total" for total score, "mean" for mean score
 #'
 #' @description
 #' Sentida sentiment-scores a string of text.
