@@ -39,6 +39,7 @@ sentida <- function(string, output = "total"){
         mul <- 2
         multiplier <- intensifier$score[which(intensifier$stem == wordint)]
       } 
+    }
   realstr <- SnowballC::wordStem(realstr, language = "danish")
   for (word in realstr){
     if (word == "ikk"){
