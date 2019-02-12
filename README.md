@@ -32,6 +32,7 @@ Effect of exclamation mark:
 sentida("Abort er mord!", output = "total") -> -6.02
 
 
+
 Sentida in a commercial context:
 
 Total score:
@@ -45,3 +46,17 @@ sentida("Colgate er godt og smager mega dejligt", output = "total") -> 5.8
 Effect of negations:
 
 sentida("Colgate er ikke godt og smager ikke dejligt", output = "total") <- -4.34
+
+
+
+# Working with æøå
+
+Working with æøå in R can cause certain problems.
+When workin with R in mac os, it is necessary to run the following code, in order to work with æøå.
+
+
+Sys.setlocale(category = "LC_ALL", locale = "UTF-8") 
+
+
+Furthermore, encoding necessary files in UTF-8 format, will make æøå accessible to Rstudio.
+
