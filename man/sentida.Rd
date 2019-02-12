@@ -4,11 +4,12 @@
 \alias{sentida}
 \title{Sentiment scores a string}
 \usage{
-sentida(string)
+sentida(string, output = "total")
 }
 \arguments{
 \item{string:}{a text string}
-  
+ 
+\item{output:}{"total" for total score, "mean" for mean score}
 }
 \value{
 The function returns the sum of sentiment.
