@@ -50,7 +50,12 @@ sentida <- function(string, output = "total"){
       if (rev == 1 | rev == 2){
         wordsc <- wordsc*(-1)
       }
-      
+     for (wordint in intens){
+       if (wordint %in% intensifier$stem){
+        mul <- 2
+        multiplier <- intensifier$score[which(intensifier$stem == wordint)]
+        } 
+      }
       if (mul == 1){
         wordsc <- wordsc*multiplier
       }
