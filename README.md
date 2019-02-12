@@ -20,19 +20,28 @@ Output = "mean" will provide a mean sentiment score per word in the string.
 Sentida in a political context:
 
 Total score:
+
 sentida("Abort er mord", output = "total") -> -4.67
 
 Mean score:
+
 sentida("Abort er mord", output = "mean") -> -1.56
 
 Effect of exclamation mark:
+
 sentida("Abort er mord!", output = "total") -> -6.02
 
 
 Sentida in a commercial context:
 
 Total score:
+
 sentida("Colgate er godt og smager dejligt", output = "total") -> 5
 
 Effect of adverb modifiers:
+
 sentida("Colgate er godt og smager mega dejligt", output = "total") -> 5.8
+
+Effect of negations:
+
+sentida("Colgate er ikke godt og smager ikke dejligt", output = "total") <- -4.34
