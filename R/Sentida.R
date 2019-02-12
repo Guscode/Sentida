@@ -14,7 +14,7 @@
 #'
 
 
-sentida <- function(string){
+sentida <- function(string, output = "total"){
   intense <- 1
   score <- 0
   rev <- 0
@@ -62,5 +62,13 @@ sentida <- function(string){
       mul <- mul - 1
     }
   }
-  return(score*intense)
+score <- score*intense
+if (output == "mean"){
+  score <- score/length(realstr)
+  return(score)
+}
+if (output == "total"){
+  return(score)
+}
+
 }
