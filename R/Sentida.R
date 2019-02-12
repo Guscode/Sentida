@@ -33,6 +33,12 @@ sentida <- function(string, output = "total"){
   if ("!" %in% space){
     intense <- 1.29
   }
+  intens <- realstr
+  for (wordint in intens){
+    if (wordint %in% intensifier$stem){
+        mul <- 2
+        multiplier <- intensifier$score[which(intensifier$stem == wordint)]
+      } 
   realstr <- SnowballC::wordStem(realstr, language = "danish")
   for (word in realstr){
     if (word == "ikk"){
@@ -43,10 +49,7 @@ sentida <- function(string, output = "total"){
       if (rev == 1 | rev == 2){
         wordsc <- wordsc*(-1)
       }
-      if (wordint %in% intensifier$stem){
-        mul <- 2
-        multiplier <- intensifier$score[which(intensifier$stem == word)]
-      } 
+      
       if (mul == 1){
         wordsc <- wordsc*multiplier
       }
