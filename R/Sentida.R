@@ -21,12 +21,19 @@ sentida <- function(string, output = "total"){
   rev <- 0
   wordsc <- 0
   mul <- 0
+  realstr <- c()
+  acclist <- c(0)
   string <- as.character(string)
   string <- tolower(string)
   space <- stringr::str_split(string, "")[[1]]
   string <- stringr::str_replace_all(string, "[[:punct:]]", "")
   if (" " %in% space){
-    realstr <- stringr::str_split(string, " ")[[1]]
+    firststring <- stringr::str_split(string, " ")[[1]]
+    for (word in firststring){
+      if (word != ""){
+        realstr <- c(realstr, word)
+      }
+    }
   } else {
     realstr <- string
   }
@@ -50,10 +57,12 @@ sentida <- function(string, output = "total"){
       if (mul == 1){
         wordsc <- wordsc*multiplier
       }
+      acclist <- c(acclist, (wordsc+tail(acclist, n = 1)))
       score <- score+wordsc
       
     } else {
       score <- score + 0
+      acclist <- c(acclist, (tail(acclist, n = 1)))
     }
     if (rev != 0){
       rev <- rev-1 
@@ -70,5 +79,8 @@ if (output == "mean"){
 if (output == "total"){
   return(score)
 }
-
+if (output == "plot"){
+  plot(acclist, type = "l")
+  
+}
 }
