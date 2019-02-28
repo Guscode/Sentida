@@ -3,11 +3,13 @@ Sentida is a Danish sentiment analysis tool. Sentida sentiment-scores sentences 
 
 # Downloading Sentida for the first time
 
+'''
 if(!require("devtools")) install.packages("devtools")
 
 devtools::install_github("Guscode/Sentida")
 
 library(Sentida) 
+'''
 
 # Using Sentida
 
