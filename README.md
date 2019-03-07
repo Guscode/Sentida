@@ -66,7 +66,9 @@ Furthermore, encoding necessary files in UTF-8 format, will make æøå accessib
 Sentida has been created by three Cognitive Science bachelor students at Aarhus University:
 
 Lars Kjartan Bacher Svendsen
+
 Jacob Aarup Dalsgaard
+
 Gustav Aarup Lauridsen
 
-Contact: Larskjartanbachersvendsen@gmail.com, jacdals@hotmail.com, Gustavaarup0111@gmail.com
+Contact: larskjartanbachersvendsen@gmail.com, jacdals@hotmail.com, Gustavaarup0111@gmail.com
