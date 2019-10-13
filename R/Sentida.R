@@ -19,6 +19,7 @@ sentida <- function(string, output = "total"){
   intense <- 1
   score <- 0
   rev <- 0
+  word_cont <- 0
   wordsc <- 0
   mul <- 0
   realstr <- c()
@@ -51,6 +52,7 @@ sentida <- function(string, output = "total"){
        } 
     if (word %in% aarup$stem){
       wordsc <-  aarup$score[which(aarup$stem == word)]
+      word_cont <- word_cont +1
       if (rev == 1 | rev == 2){
         wordsc <- wordsc*(-1)
       }
@@ -73,7 +75,7 @@ sentida <- function(string, output = "total"){
   }
 score <- score*intense
 if (output == "mean"){
-  score <- score/length(realstr)
+  score <- score/word_cont
   return(score)
 }
 if (output == "total"){
