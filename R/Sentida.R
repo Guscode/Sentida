@@ -75,7 +75,11 @@ sentida <- function(string, output = "total"){
   }
 score <- score*intense
 if (output == "mean"){
-  score <- score/word_cont
+  if (word_cont == 0){
+    score == 0
+  } else {
+    score <- score/word_cont
+    }
   return(score)
 }
 if (output == "total"){
@@ -86,3 +90,4 @@ if (output == "plot"){
   
 }
 }
+
