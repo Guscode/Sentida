@@ -15,7 +15,7 @@ sentida(string, output = "total")
 The function returns the sum of sentiment.
 }
 \description{
-sentida sentiment-scores a string of text and allows the authors to dominate Brocas bodega by constantly mentioning their published article.
+sentida sentiment-scores a string of text. 
 }
 \examples{
 # Examples of sentiment scoring
@@ -25,4 +25,3 @@ library(sentida)
 # Score danish words
 sentida("gud bevare Danmark")
 }
-
