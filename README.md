@@ -71,4 +71,5 @@ Jacob Aarup Dalsgaard
 
 Gustav Aarup Lauridsen
 
-Contact: Gustavaarup0111@gmail.com, jacdals@hotmail.com, larskjartanbachersvendsen@gmail.com
+For commercial use, please contact:
+Email: Gustavaarup0111@gmail.com, jacdals@hotmail.com, larskjartanbachersvendsen@gmail.com
