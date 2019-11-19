@@ -2,8 +2,8 @@
 #'
 #' @name Sentida
 #'
-#' @param string: a text string
-#' @param outout: "total" for total score, "mean" for mean score
+#' @param string a text string
+#' @param output "total" for total score, "mean" for mean score
 #'
 #' @description
 #' Sentida sentiment-scores a string of text.
@@ -11,8 +11,13 @@
 #' @return
 #' The function returns the sum of sentiment.
 #'
-#' @export
+#' @examples
 #'
+#' sentida("Gud bevare Danmark")
+#'
+#' @importFrom utils tail
+#'
+#' @export
 
 
 sentida <- function(string, output = "total"){
@@ -49,7 +54,7 @@ sentida <- function(string, output = "total"){
     if (word %in% intensifier$stem){
         mul <- 2
         multiplier <- intensifier$score[which(intensifier$stem == word)]
-       } 
+       }
     if (word %in% aarup$stem){
       wordsc <-  aarup$score[which(aarup$stem == word)]
       word_cont <- word_cont +1
@@ -61,33 +66,30 @@ sentida <- function(string, output = "total"){
       }
       acclist <- c(acclist, (wordsc+tail(acclist, n = 1)))
       score <- score+wordsc
-      
+
     } else {
       score <- score + 0
       acclist <- c(acclist, (tail(acclist, n = 1)))
     }
     if (rev != 0){
-      rev <- rev-1 
+      rev <- rev-1
     }
     if (mul != 0){
       mul <- mul - 1
     }
   }
-score <- score*intense
-if (output == "mean"){
+  score <- score*intense
+  if (output == "mean"){
   if (word_cont == 0){
     score == 0
   } else {
     score <- score/word_cont
+  }
+  return(score)
+  }
+  if (output == "total"){
+  return(score)
     }
-  return(score)
-}
-if (output == "total"){
-  return(score)
-}
-if (output == "plot"){
-  plot(acclist, type = "l")
-  
-}
-}
+  }
+
 
