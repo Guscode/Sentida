@@ -5,8 +5,6 @@
 #' @param string a text string
 #' @param output "total" for total score, "mean" for mean score
 #'
-#' @param x value to match
-#' @param table object to match against
 #'
 #' @description
 #' Sentida sentiment-scores a string of text.
@@ -59,7 +57,7 @@ sentida <- function(string, output = "total"){
       mul <- 2
       multiplier <- intensifier$score[which(intensifier$stem == word)]
     }
-    if (word %fin% aarup$stem){
+    if (fastmatch::fmatch(word, aarup$stem, nomatch = 0L) > 0L){
       wordsc <-  get(word ,envir=env, inherits=FALSE)
       word_cont <- word_cont +1
       if (rev == 1 | rev == 2){
@@ -95,7 +93,4 @@ sentida <- function(string, output = "total"){
 }
 
 
-`%fin%` <- function(x, table) {
-  fastmatch::fmatch(x, table, nomatch = 0L) > 0L
-}
 

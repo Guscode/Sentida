@@ -10,10 +10,6 @@ sentida(string, output = "total")
 \item{string}{a text string}
 
 \item{output}{"total" for total score, "mean" for mean score}
-
-\item{x}{value to match}
-
-\item{table}{object to match against}
 }
 \value{
 The function returns the sum of sentiment.
