@@ -1,9 +1,12 @@
 #' Sentiment scores a string
 #'
-#' @name Sentida
+#' @name sentida
 #'
 #' @param string a text string
 #' @param output "total" for total score, "mean" for mean score
+#'
+#' @param x value to match
+#' @param table object to match against
 #'
 #' @description
 #' Sentida sentiment-scores a string of text.
@@ -15,9 +18,10 @@
 #'
 #' sentida("Gud bevare Danmark")
 #'
-#' @importFrom utils tail
 #'
-#' @export
+#'
+#' @export sentida
+
 
 
 sentida <- function(string, output = "total"){
@@ -52,11 +56,11 @@ sentida <- function(string, output = "total"){
       rev <- 3
     }
     if (word %in% intensifier$stem){
-        mul <- 2
-        multiplier <- intensifier$score[which(intensifier$stem == word)]
-       }
-    if (word %in% aarup$stem){
-      wordsc <-  aarup$score[which(aarup$stem == word)]
+      mul <- 2
+      multiplier <- intensifier$score[which(intensifier$stem == word)]
+    }
+    if (word %fin% aarup$stem){
+      wordsc <-  get(word ,envir=env, inherits=FALSE)
       word_cont <- word_cont +1
       if (rev == 1 | rev == 2){
         wordsc <- wordsc*(-1)
@@ -64,12 +68,10 @@ sentida <- function(string, output = "total"){
       if (mul == 1){
         wordsc <- wordsc*multiplier
       }
-      acclist <- c(acclist, (wordsc+tail(acclist, n = 1)))
       score <- score+wordsc
 
     } else {
-      score <- score + 0
-      acclist <- c(acclist, (tail(acclist, n = 1)))
+      score <- score
     }
     if (rev != 0){
       rev <- rev-1
@@ -80,16 +82,20 @@ sentida <- function(string, output = "total"){
   }
   score <- score*intense
   if (output == "mean"){
-  if (word_cont == 0){
-    score == 0
-  } else {
-    score <- score/word_cont
-  }
-  return(score)
+    if (word_cont == 0){
+      score == 0
+    } else {
+      score <- score/word_cont
+    }
+    return(score)
   }
   if (output == "total"){
-  return(score)
-    }
+    return(score)
   }
+}
 
+
+`%fin%` <- function(x, table) {
+  fastmatch::fmatch(x, table, nomatch = 0L) > 0L
+}
 
