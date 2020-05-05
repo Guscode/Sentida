@@ -2,7 +2,7 @@ Package: Sentida
 Type: Package
 Title: Sentiment Scoring Of Words And Sentences
 Version: 1.1
-Date: 2019-11-19
+Date: 2020-05-05
 Authors@R: c(
   person("Gustav", "Lauridsen", email = "gustavaarup0111@gmail.com", role = c("aut")),
   person("Lars", "Svendsen", email = "larskjartan@hotmail.com", role = c("aut")),
@@ -10,7 +10,7 @@ Authors@R: c(
   )
 Description: The package allows user to make sentiment analysis in danish
 LazyData: TRUE
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Depends: R (>= 2.10)
 Imports: 
     stringr (>= 1.3.1),

@@ -23,6 +23,7 @@
 
 
 sentida <- function(string, output = "total"){
+  sys_name <- Sys.info()["sysname"][[1]]
   intense <- 1
   score <- 0
   rev <- 0
@@ -58,7 +59,9 @@ sentida <- function(string, output = "total"){
       multiplier <- intensifier$score[which(intensifier$stem == word)]
     }
     if (fastmatch::fmatch(word, aarup$stem, nomatch = 0L) > 0L){
-      wordsc <-  get(word ,envir=env, inherits=FALSE)
+      if (sys_name == "Windows"){
+      wordsc <-  get(word ,envir=env, inherits=FALSE)}
+      else {wordsc <- aarup$score[which(aarup$stem == word)]}
       word_cont <- word_cont +1
       if (rev == 1 | rev == 2){
         wordsc <- wordsc*(-1)
