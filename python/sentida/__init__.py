@@ -1,0 +1,1 @@
+from sentida.sentida import Sentida, sentida_examples
