@@ -1,0 +1,70 @@
+---
+title: "Sentida_class"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#Loading this will enable you to work with æøå - VERY IMPORTANT
+Sys.setlocale(category = "LC_ALL", locale = "UTF-8")
+
+#load packages and data
+library(pacman)
+p_load(ggplot2,stringr,dplyr,tidyverse, remotes) #add your favorite packages
+
+fv_all <- read_csv("fv_all.csv")
+
+#look at the data, check if classes make sense, e.g. $text should be character
+head(fv_all$text, 10)
+colnames()
+class()
+
+#Load sentida and apply it to one of the tweets, try both total and mean
+remotes::install_github("Guscode/Sentida", force = T)
+library(Sentida)
+?sentida
+
+
+#select a leader from one of the Danish political parties (https://www.dr.dk/nyheder/politik/resultater/folketingsvalg). From fv_all make a new dataframe including only tweets mentioning this person. 
+#E.g.: paludan <- filter(fv_all, str_detect(fvhash$text, "Paludan") == T)
+
+
+
+### You might want to do some preprocessing of the text here. str_remove_all() is cute, tolower() is cool, str_replace_all() is sexy. Make the tweets lowercase and remove all numbers (Major hint alert: str_remove_all(paludan$text,[:digit:]))
+
+
+
+#Make a new row in the dataframe with sentiment score of every tweet mentioning this person (e.g use lapply() or make a loop if you dare)
+?lapply
+```
+
+
+```{r}
+#what is his/her mean sentiment score?
+###Bonus: What is their mean sentiment score per day? !WARNING ADVANCED PLEASE SKIP! lifesaver: aggregate()
+
+
+
+
+#Compare your political leader to one from another party
+
+
+
+
+
+#Did the parties who won less mandates than the last election have a worse sentiment score than the rest?
+
+
+
+
+#Are there any correlations between sentiment score and amount of favourites/retweets?
+
+
+
+
+```
+
