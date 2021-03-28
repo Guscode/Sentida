@@ -26,7 +26,7 @@ Output = "total" will provide an accumulated sentiment score for the string.
 Output = "mean" will provide a mean sentiment score per word in the string.
 
 ## Python
-\[unstable\]
+
 
 The sentida function in the Sentida class takes four arguments: The input text, the desired output, normalization, and the desired speed / accuracy prioritization. "mean" and "total" return a single float value and "by_sentence_mean" and "by_sentence_total" return a list of length equal to the amount of sentences.
 
