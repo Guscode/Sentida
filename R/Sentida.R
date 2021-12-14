@@ -81,7 +81,7 @@ sentida <- function(string, output = "total"){
   
   if (output == "mean"){
     if (word_cont == 0){
-      scores == 0
+      score = 0
     } else {
       score <- sum(scores)/word_cont
     }
