@@ -22,10 +22,12 @@
 
 
 
+
 sentida <- function(string, output = "total"){
   sys_name <- Sys.info()["sysname"][[1]]
   intense <- 1
   score <- 0
+  scores <- c()
   rev <- 0
   word_cont <- 0
   wordsc <- 0
@@ -54,6 +56,8 @@ sentida <- function(string, output = "total"){
     if (word == "ikk"){
       rev <- 3
     }
+    if(mul!=0){mul <- mul-1}
+    
     if (word %in% intensifier$stem){
       mul <- 2
       multiplier <- intensifier$score[which(intensifier$stem == word)]
@@ -69,28 +73,25 @@ sentida <- function(string, output = "total"){
       if (mul == 1){
         wordsc <- wordsc*multiplier
       }
-      score <- score+wordsc
+      scores <- c(scores,wordsc)
 
-    } else {
-      score <- score
-    }
-    if (rev != 0){
-      rev <- rev-1
-    }
-    if (mul != 0){
-      mul <- mul - 1
     }
   }
-  score <- score*intense
+  
   if (output == "mean"){
     if (word_cont == 0){
-      score == 0
+      scores == 0
     } else {
-      score <- score/word_cont
+      score <- sum(scores)/word_cont
     }
     return(score)
   }
+  if (output == "all_sentiment"){
+    score = sum(abs(scores))*intense
+    return(score)
+  }
   if (output == "total"){
+    score = sum(scores)*intense
     return(score)
   }
 }
