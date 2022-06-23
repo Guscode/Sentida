@@ -27,6 +27,8 @@ import numpy as np
 import pandas as pd
 from nltk.stem import SnowballStemmer
 
+nltk.download('punkt')
+
 #################
 ### CONSTANTS ###
 #################
